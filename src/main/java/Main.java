@@ -22,12 +22,15 @@ public class Main {
         List<Product> soretdByName = sort.sort(products);
         sort = new SortByPrice();
         List<Product> soretdByPrice = sort.sort(products);
-
+        sort = new SortByQuantity();
+        List<Product> soretdByQuantity = sort.sort(products);
         showList(products);
         System.out.println("----------------------------------");
         showList(soretdByName);
         System.out.println("----------------------------------");
         showList(soretdByPrice);
+        System.out.println("----------------------------------");
+        showList(soretdByQuantity);
 
     }
     public static void showList(List<Product> products){
