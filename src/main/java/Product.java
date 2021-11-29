@@ -46,7 +46,21 @@ public class Product {
     public LocalDate getDate() {
         return date;
     }
-    public class ProductBuilder {
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", color='" + color + '\'' +
+                ", weight=" + weight +
+                ", descreiption='" + descreiption + '\'' +
+                ", date=" + date +
+                '}';
+    }
+
+    public static class ProductBuilder {
         private String name;
         private double price;
         private int quantity;
@@ -79,11 +93,11 @@ public class Product {
             return this;
         }
 
-        public void build(){
+        public Product build(){
             if (quantity == 0 ){
                 quantity = 1;
             }
-            Product product = new Product(this);
+            return new Product(this);
         }
     }
 
